@@ -1,0 +1,19 @@
+<div class="mx-auto md:w-2/3 w-full">
+    <h2 class= "font-bold text-4xl">Acceso</h2><br />
+    <%= form_with(url: sessions_path) do |form| %>
+
+      <div class= "field">
+        <%= form.label :login %><br />
+        <%= form.text_field :login, require: true  %>
+      </div>
+
+      <div class="field" >
+        <%= form.label :password %><br />
+        <%= form.password_field :password, require: true  %>
+      </div><br>
+      
+      <button class="inline-block font-medium  rounded-full py-3 px-5 bg-teal-400 text-black block  hover:text-red-600 mx-2 ">
+        <%= form.submit %>
+      </button>
+    <% end %>
+<div>

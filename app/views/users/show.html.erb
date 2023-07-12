@@ -1,0 +1,2 @@
+    <h2 class= "font-bold text-2xl">Productos de <%= @user.username %></h1><br/>
+    <%= turbo_frame_tag :products, src: products_path(user_id: @user.id)%>

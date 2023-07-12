@@ -1,0 +1,24 @@
+<%= form_with model: @product do |form| %>
+    <% @product.errors.full_messages.each do |error|%>
+        <%= error %><br>
+    <% end %><br>
+    
+    <%= form.label :title%><br>
+    <%= form.text_field :title%><br><br>
+
+    <%= form.label :description%><br>
+    <%= form.text_area :description%><br><br>
+
+    <%= form.label :price%><br>
+    <%= form.number_field :price%><br><br>
+
+    <%= form.label :categorium_id %>
+    <%= form.collection_select :categorium_id, Categorium.all.order(name: :asc), :id, :name %><br><br>
+
+    <%= form.label :photo%>
+    <%= form.file_field :photo%><br><br>
+
+    <button class= "inline-block font-medium  rounded-full py-3 px-5 bg-teal-400 text-black block  hover:text-orange-500 mx-2 ">
+    <%= form.submit%>
+    </button>
+<% end%>
